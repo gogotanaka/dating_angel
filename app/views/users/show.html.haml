@@ -1,2 +1,10 @@
-%h1 Users#show
-%p Find me in app/views/users/show.html.haml
+#users
+  %dl
+    %dd= image_tag @user.avatar_url, width: '300px'
+    %dd= @user.name
+    %dd= @user.age
+    %dd= @user.description
+    %dd= @user.profile
+
+  = link_to new_user_registration_path, class: 'btn btn-danger' do
+    %i.fa.fa-plus-circle= ' Add friend'

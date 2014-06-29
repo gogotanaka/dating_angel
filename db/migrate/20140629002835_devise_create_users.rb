@@ -8,7 +8,10 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :avatar
       t.integer :age
-      t.integer :description
+      t.string :description
+      t.string :angel, default: true
+
+      t.string :profile
 
       ## Recoverable
       t.string   :reset_password_token

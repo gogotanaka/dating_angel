@@ -3,18 +3,27 @@
   .panel-body
     .row
       .col-md-8.col-md-offset-2
-    .form-group
+    .form-group.row
       = f.label :name, class: 'control-label col-md-3 col-md-offset-1'
       .col-md-6
         = f.text_field :name, autofocus: true, placeholder: "Tom", class: 'form-control'
-    .form-group
+    .form-group.row
+      = f.label :age, class: 'control-label col-md-3 col-md-offset-1'
+      .col-md-6
+        = f.text_field :age, autofocus: true, placeholder: "28", class: 'form-control'
+    .form-group.row
       = f.label :description, class: 'control-label col-md-3 col-md-offset-1'
       .col-md-6
         = f.text_area :description, autofocus: true, placeholder: "Description", class: 'form-control', rows: "8"
-    .form-group
+    - if @user.angel?
+      .form-group.row
+        = f.label :profile, class: 'control-label col-md-3 col-md-offset-1'
+        .col-md-6
+          = f.text_area :profile, autofocus: true, placeholder: "Profile", class: 'form-control', rows: "8"
+    .form-group.row
       = f.label :avatar, class: 'control-label col-md-3 col-md-offset-1'
       .col-md-6
         = f.file_field :avatar, class: 'form-control'
-    .form-group
+    .form-group.row
       .col-md-6
         = f.submit 'Update', class: 'btn btn-info col-md-offset-2'

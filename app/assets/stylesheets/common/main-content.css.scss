@@ -4,6 +4,7 @@
 
 #main-content {
   .panel-body .form-group {
-    padding: 20px;
+    @extend .row;
+    padding: 10px 0;
   }
 }
