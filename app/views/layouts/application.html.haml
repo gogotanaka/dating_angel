@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Kuroda
+    %title Dating Angel
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
@@ -15,52 +15,30 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{:href => "#"} Kuroda Lab
+          %a.navbar-brand{:href => "#"} Dating Angel
         / Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          %ul.nav.navbar-nav
-            %li.active
-              %a{:href => "#"} Link
-            %li
-              %a{:href => "#"} Link
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                Dropdown
-                %b.caret
-              %ul.dropdown-menu
-                %li
-                  %a{:href => "#"} Action
-                %li
-                  %a{:href => "#"} Another action
-                %li
-                  %a{:href => "#"} Something else here
-                %li.divider
-                %li
-                  %a{:href => "#"} Separated link
-                %li.divider
-                %li
-                  %a{:href => "#"} One more separated link
+
           %form.navbar-form.navbar-left{:role => "search"}
             .form-group
               %input.form-control{:placeholder => "Search", :type => "text"}/
             %button.btn.btn-default{:type => "submit"} Submit
-          %ul.nav.navbar-nav.navbar-right
-            %li
-              %a{:href => "#"} Link
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                Dropdown
-                %b.caret
-              %ul.dropdown-menu
-                %li
-                  %a{:href => "#"} Action
-                %li
-                  %a{:href => "#"} Another action
-                %li
-                  %a{:href => "#"} Something else here
-                %li.divider
-                %li
-                  %a{:href => "#"} Separated link
+          - if current_user
+            %ul.nav.navbar-nav.navbar-right
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  Menu
+                  %b.caret
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "#"} Action
+                  %li
+                    %a{:href => "#"} Another action
+                  %li
+                    %a{:href => "#"} Something else here
+                  %li.divider
+                  %li= link_to "Sing out", destroy_user_session_path, method: :delete
         / /.navbar-collapse
       / /.container-fluid
-    = yield
+    #main-content
+      = yield
