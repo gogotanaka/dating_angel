@@ -6,3 +6,6 @@
     %dd= @user.description
     %dd= @user.profile
 
+  - unless current_user
+    = link_to new_user_registration_path(angel: false), class: 'btn btn-danger' do
+      %i.fa.fa-pencil= ' 登録してメッセージを送る'

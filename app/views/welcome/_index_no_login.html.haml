@@ -5,10 +5,14 @@
 #angels-list.row
   %h2 Angels
   - User.where(angel: true).each do |angel|
-    %dl
-      %dd= image_tag angel.avatar_url, width: '300px'
-      %dd= angel.name
-      %dd= angel.age
-      %dd= angel.description
-      %dd= angel.profile
+    %ul
+      %li
+        %dl
+          %dd
+            = link_to angel do
+              - image_tag angel.avatar_url, width: '300px'
+          %dd= angel.name
+          %dd= angel.age
+          %dd= angel.description
+          %dd= angel.profile
 

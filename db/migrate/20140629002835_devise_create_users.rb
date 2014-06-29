@@ -9,7 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :avatar
       t.integer :age
       t.string :description
-      t.string :angel, default: true
+      t.boolean :angel, default: true
 
       t.string :profile
 

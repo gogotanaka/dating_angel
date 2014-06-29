@@ -10,5 +10,10 @@
   #angels-list {
     padding: 30px;
     h2 {}
+    li {
+      float: left;
+      padding: 0 30px;
+      list-style-type: none;
+    }
   }
 }
