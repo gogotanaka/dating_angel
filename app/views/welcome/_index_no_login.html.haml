@@ -1,3 +1,14 @@
-#main-content.row
+#regist-btn.row
   = link_to new_user_registration_path, class: 'btn btn-danger' do
     %i.fa.fa-pencil= ' Registration'
+
+#angels-list.row
+  %h2 Angels
+  - User.where(angel: true).each do |angel|
+    %dl
+      %dd= image_tag angel.avatar_url, width: '300px'
+      %dd= angel.name
+      %dd= angel.age
+      %dd= angel.description
+      %dd= angel.profile
+

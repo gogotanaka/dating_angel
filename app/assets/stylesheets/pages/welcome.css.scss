@@ -3,6 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #welcome {
-  text-align: center;
-  padding: 30px;
+  #regist-btn {
+    text-align: center;
+    padding: 30px;
+  }
+  #angels-list {
+    padding: 30px;
+    h2 {}
+  }
 }
